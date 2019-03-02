@@ -10,7 +10,8 @@ const images = `${__dirname}/images`;
 
 !fs.existsSync(images) && fs.mkdirSync(images);
 
-const db = new JsonDB('data/selfies', true, true);
+const selfiesDb = new JsonDB('data/selfies', true, true);
+const subscriptionsDb = new JsonDB('data/subscriptions', true, true);
 const app = express();
 
 app.use(cors());
@@ -23,6 +24,6 @@ app.use(formidableMiddleware({
     multiples: false,
 }));
 
-routes(app, db);
+routes(app, selfiesDb, subscriptionsDb);
 
 const server = app.listen(3000, ()=> console.log('app running on port:', server.address().port));
