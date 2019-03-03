@@ -26,7 +26,6 @@ const appRouter = (app, selfiesDb, subscriptionsDb) => {
         const subscriptions = subscriptionsDb.getData('/');
 
         Object.values(subscriptions).forEach(subscription => {
-            console.log(subscription);
             const pushConfig = {
                 endpoint: subscription.endpoint,
                 keys: {
