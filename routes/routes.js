@@ -35,8 +35,9 @@ const appRouter = (app, selfiesDb, subscriptionsDb) => {
             };
 
             webpush.sendNotification(pushConfig, JSON.stringify({
-                title: 'New Selfie',
-                content: 'New Selfie Added!',
+                title: 'New Selfie Added!',
+                content: `${post.title} @ ${post.location}`,
+                imageUrl: post.selfieUrl,
                 openUrl: 'help'
             })).catch(error => console.log(error));
         });

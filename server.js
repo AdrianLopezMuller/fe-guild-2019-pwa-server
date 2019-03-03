@@ -1,7 +1,7 @@
 const express = require('express');
 const formidableMiddleware = require('express-formidable');
 const JsonDB = require('node-json-db');
-const cors = require('cors')
+const cors = require('cors');
 const routes = require('./routes/routes');
 const fs = require('fs');
 
